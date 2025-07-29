@@ -1,124 +1,197 @@
-
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Paint - 무료 배경화면 다운로드</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 다국어 대응 SEO 메타 태그 -->
+  <title id="dynamic-title">AI Wallpapers</title>
+  <meta name="description" id="dynamic-description" content="Download high-quality AI-generated wallpapers for free." />
+  <meta property="og:title" id="dynamic-og-title" content="AI Wallpapers" />
+  <meta property="og:description" id="dynamic-og-description" content="Download high-quality AI-generated wallpapers for free." />
+  <meta property="og:image" id="dynamic-og-image" content="https://aipaint.art/images/og.jpg" />
+  <meta property="og:url" content="https://aipaint.art" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aipaint.art" />
+
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: sans-serif;
       margin: 0;
+      padding: 0;
+    }
+
+    .lang-block {
+      display: none;
       padding: 20px;
-      background-color: #f5f5f5;
     }
-    h1 {
-      text-align: center;
-      color: #4a90e2;
-    }
+
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
       gap: 20px;
-      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
     }
+
     .card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      width: 250px;
       text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
     .card img {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 5px;
       margin-bottom: 10px;
     }
+
     .card a {
       display: inline-block;
-      padding: 8px 15px;
-      background-color: #4a90e2;
+      margin-top: 5px;
+      padding: 8px 12px;
+      background-color: #4CAF50;
       color: white;
-      border-radius: 5px;
+      border-radius: 4px;
       text-decoration: none;
     }
+
     .card a:hover {
-      background-color: #357ABD;
+      background-color: #45a049;
+    }
+
+    .lang-buttons {
+      text-align: right;
+      padding: 10px;
+    }
+
+    .lang-buttons button {
+      padding: 6px 10px;
+      margin-left: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #eee;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .lang-buttons button:hover {
+      background-color: #ccc;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 60px 0;
+      font-size: 18px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
+  <!-- 로딩 메시지 -->
+  <div id="loading">언어를 자동 감지 중입니다...</div>
+
   <!-- 언어 선택 버튼 -->
-  <div style="text-align: right; padding: 10px;">
+  <div class="lang-buttons" style="display: none;">
     <button onclick="setLang('ko')">🇰🇷</button>
     <button onclick="setLang('en')">🇺🇸</button>
     <button onclick="setLang('ja')">🇯🇵</button>
   </div>
 
-  <!-- 한국어 영역 -->
+  <!-- 한국어 -->
   <div class="lang-block" id="lang-ko">
     <h1>AI로 그려진 배경화면을 다운로드하세요</h1>
     <p>숲, 우주, 종이 질감 등 다양한 스타일의 그림을 무료로 제공합니다.</p>
     <div class="gallery">
       <div class="card">
-        <img src="images/forest.jpg" alt="숲 이미지">
+        <img src="images/forest.jpg" alt="숲 이미지" loading="lazy" />
         <a href="images/forest.jpg" download>다운로드</a>
       </div>
       <div class="card">
-        <img src="images/space.jpg" alt="우주 이미지">
+        <img src="images/space.jpg" alt="우주 이미지" loading="lazy" />
         <a href="images/space.jpg" download>다운로드</a>
       </div>
       <div class="card">
-        <img src="images/paper.jpg" alt="종이 질감">
+        <img src="images/paper.jpg" alt="종이 질감 이미지" loading="lazy" />
         <a href="images/paper.jpg" download>다운로드</a>
       </div>
     </div>
   </div>
 
-  <!-- 영어 영역 -->
+  <!-- 영어 -->
   <div class="lang-block" id="lang-en">
     <h1>Download AI-Generated Wallpapers</h1>
     <p>We offer various styles like forest, space, and paper textures for free.</p>
     <div class="gallery">
       <div class="card">
-        <img src="images/forest.jpg" alt="Forest Image">
+        <img src="images/forest.jpg" alt="Forest Image" loading="lazy" />
         <a href="images/forest.jpg" download>Download</a>
       </div>
       <div class="card">
-        <img src="images/space.jpg" alt="Space Image">
+        <img src="images/space.jpg" alt="Space Image" loading="lazy" />
         <a href="images/space.jpg" download>Download</a>
       </div>
       <div class="card">
-        <img src="images/paper.jpg" alt="Paper Texture">
+        <img src="images/paper.jpg" alt="Paper Texture" loading="lazy" />
         <a href="images/paper.jpg" download>Download</a>
       </div>
     </div>
   </div>
 
-  <!-- 일본어 영역 -->
+  <!-- 일본어 -->
   <div class="lang-block" id="lang-ja">
     <h1>AIが描いた壁紙をダウンロード</h1>
     <p>森、宇宙、紙の質感など、さまざまなスタイルの画像を無料で提供します。</p>
     <div class="gallery">
       <div class="card">
-        <img src="images/forest.jpg" alt="森の画像">
+        <img src="images/forest.jpg" alt="森の画像" loading="lazy" />
         <a href="images/forest.jpg" download>ダウンロード</a>
       </div>
       <div class="card">
-        <img src="images/space.jpg" alt="宇宙の画像">
+        <img src="images/space.jpg" alt="宇宙の画像" loading="lazy" />
         <a href="images/space.jpg" download>ダウンロード</a>
       </div>
       <div class="card">
-        <img src="images/paper.jpg" alt="紙の質感">
+        <img src="images/paper.jpg" alt="紙の質感画像" loading="lazy" />
         <a href="images/paper.jpg" download>ダウンロード</a>
       </div>
     </div>
   </div>
 
-  <!-- 언어 자동 감지 + 수동 전환 스크립트 -->
+  <!-- 언어 자동 감지 및 SEO/OG 태그 업데이트 스크립트 -->
   <script>
     const supportedLangs = ['ko', 'en', 'ja'];
+    const metaData = {
+      ko: {
+        title: "AI 배경화면 다운로드",
+        description: "AI로 만든 고화질 배경화면을 무료로 다운로드하세요. 숲, 우주, 종이 질감 등 다양한 스타일 제공.",
+        ogImage: "https://aipaint.art/images/og_ko.jpg"
+      },
+      en: {
+        title: "Download AI-Generated Wallpapers",
+        description: "Download high-quality AI-generated wallpapers for free. Forests, space, paper textures and more.",
+        ogImage: "https://aipaint.art/images/og_en.jpg"
+      },
+      ja: {
+        title: "AI壁紙を無料でダウンロード",
+        description: "AIが描いた高品質な壁紙を無料で提供しています。森、宇宙、紙の質感など様々なスタイルをどうぞ。",
+        ogImage: "https://aipaint.art/images/og_ja.jpg"
+      }
+    };
+
+    function updateMeta(lang) {
+      document.getElementById("dynamic-title").innerText = metaData[lang].title;
+      document.getElementById("dynamic-description").setAttribute("content", metaData[lang].description);
+      document.getElementById("dynamic-og-title").setAttribute("content", metaData[lang].title);
+      document.getElementById("dynamic-og-description").setAttribute("content", metaData[lang].description);
+      document.getElementById("dynamic-og-image").setAttribute("content", metaData[lang].ogImage);
+    }
 
     function showLang(lang) {
       supportedLangs.forEach(l => {
@@ -126,7 +199,10 @@
       });
       if (document.getElementById(`lang-${lang}`)) {
         document.getElementById(`lang-${lang}`).style.display = 'block';
+        updateMeta(lang);
       }
+      document.querySelector('.lang-buttons').style.display = 'block';
+      document.getElementById('loading').style.display = 'none';
     }
 
     function setLang(lang) {
@@ -134,11 +210,9 @@
       showLang(lang);
     }
 
-    // 초기 언어 감지
     const storedLang = localStorage.getItem('lang');
     const browserLang = (navigator.language || 'en').substring(0, 2);
     const langToUse = storedLang || (supportedLangs.includes(browserLang) ? browserLang : 'en');
-
     showLang(langToUse);
   </script>
 
