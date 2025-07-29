@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지 요청하기 - aipaint.art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .notice {
+      background-color: #fff5f5;
+      padding: 12px;
+      border: 1px solid #f44336;
+      color: #f44336;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .email-note {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">🌟 AI 이미지 요청하기</h1>
+
+  <div class="notice" id="alert">
+    ※ 입력한 요청 내용은 <strong>사이트에 이미지로 게시될 수 있습니다.</strong><br>
+    민감한 개인정보는 절대 포함하지 마세요.
+  </div>
+
+  <form action="https://formsubmit.co/request.hon@gmail.com" method="POST">
+
+    <label id="msg-label" for="message">어떤 이미지를 보고 싶으신가요?</label>
+    <textarea name="message" id="message" rows="5" required placeholder="예: 달빛이 비추는 숲속, 몽환적인 분위기..."></textarea>
+
+    <label id="email-label" for="email">이메일 (선택사항)</label>
+    <input type="email" name="email" id="email" placeholder="예: your@email.com">
+
+    <p class="email-note" id="email-note">
+      이메일은 <strong>이미지가 사이트에 업로드되었음을 안내하기 위해</strong> 사용되며, 발송 후 즉시 폐기됩니다.<br>
+      안내를 원하지 않으면 입력하지 않으셔도 됩니다.
+    </p>
+
+    <!-- FormSubmit 옵션 -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_subject" value="aipaint.art - 새 이미지 요청 도착">
+    <input type="hidden" name="_next" value="thankyou.html">
+
+
+    <button type="submit" id="submit-btn">요청 보내기</button>
+  </form>
+
+  <p style="margin-top: 30px; font-size: 14px; color: gray;">
+    © 2025 aipaint.art — AI 이미지 생성 사이트
+  </p>
+
+  <script>
+    const lang = (navigator.language || 'en').substring(0, 2);
+    const ko = {
+      title: "🌟 AI 이미지 요청하기",
+      alert: "※ 입력한 요청 내용은 <strong>사이트에 이미지로 게시될 수 있습니다.</strong><br>민감한 개인정보는 절대 포함하지 마세요.",
+      msgLabel: "어떤 이미지를 보고 싶으신가요?",
+      emailLabel: "이메일 (선택사항)",
+      emailNote: "이메일은 <strong>이미지가 사이트에 업로드되었음을 안내하기 위해</strong> 사용되며, 발송 후 즉시 폐기됩니다.<br>안내를 원하지 않으면 입력하지 않으셔도 됩니다.",
+      submitBtn: "요청 보내기"
+    };
+
+    const en = {
+      title: "🌟 Request an AI Image",
+      alert: "※ Your prompt may be published on the site as an image.<br>Please do not include personal or sensitive information.",
+      msgLabel: "What kind of image would you like to see?",
+      emailLabel: "Email (optional)",
+      emailNote: "Your email will only be used to notify you when your requested image is uploaded to the site, and will be deleted immediately after sending. You may leave this blank if you don't want notifications.",
+      submitBtn: "Submit Request"
+    };
+
+    const ja = {
+      title: "🌟 AI画像リクエスト",
+      alert: "※ 入力されたリクエスト内容は、<strong>当サイトに画像として掲載される場合があります。</strong><br>個人情報や機密情報は入力しないでください。",
+      msgLabel: "どのような画像をご希望ですか？",
+      emailLabel: "メールアドレス（任意）",
+      emailNote: "メールアドレスは、<strong>リクエスト画像がサイトにアップロードされた際の通知</strong>にのみ使用され、送信後すぐに破棄されます。通知を希望しない場合は空欄のままで構いません。",
+      submitBtn: "リクエストを送信"
+    };
+
+    const text = lang === 'ko' ? ko : lang === 'ja' ? ja : en;
+
+    document.getElementById("title").innerHTML = text.title;
+    document.getElementById("alert").innerHTML = text.alert;
+    document.getElementById("msg-label").innerText = text.msgLabel;
+    document.getElementById("email-label").innerText = text.emailLabel;
+    document.getElementById("email-note").innerHTML = text.emailNote;
+    document.getElementById("submit-btn").innerText = text.submitBtn;
+  </script>
+
+</body>
+</html>

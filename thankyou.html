@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>요청 완료 - aipaint.art</title>
+  <meta http-equiv="refresh" content="20;url=/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 요청이 완료되었습니다!</h1>
+  <p id="message">이미지 요청이 성공적으로 전송되었습니다.<br>요청하신 내용을 바탕으로 곧 반영될 예정입니다.</p>
+
+  <a href="/" class="btn" id="backBtn">메인으로 돌아가기</a>
+
+  <script>
+    const lang = (navigator.language || 'en').substring(0, 2);
+
+    const messages = {
+      ko: {
+        msg: "이미지 요청이 성공적으로 전송되었습니다.<br>요청하신 내용을 바탕으로 곧 반영될 예정입니다。",
+        btn: "메인으로 돌아가기"
+      },
+      en: {
+        msg: "Your image request has been submitted successfully.<br>We'll reflect your request on the site soon.",
+        btn: "Return to Home"
+      },
+      ja: {
+        msg: "画像リクエストが正常に送信されました。<br>リクエスト内容は近日中に反映される予定です。",
+        btn: "トップページへ戻る"
+      }
+    };
+
+    const t = messages[lang] || messages['en'];
+    document.getElementById("message").innerHTML = t.msg;
+    document.getElementById("backBtn").innerText = t.btn;
+  </script>
+
+</body>
+</html>
