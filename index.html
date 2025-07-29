@@ -1,67 +1,37 @@
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Paint - 무료 배경화면 다운로드</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      text-align: center;
-      color: #4a90e2;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .card img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .card a {
-      display: inline-block;
-      padding: 8px 15px;
-      background-color: #4a90e2;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .card a:hover {
-      background-color: #357ABD;
-    }
-  </style>
-</head>
 <body>
-  <h1>AI로 그려진 배경화면을 무료로 다운로드하세요</h1>
+
+  <!-- 한국어 콘텐츠 -->
+  <div class="lang-block" id="lang-ko">
+    <h1>AI로 그려진 배경화면을 다운로드하세요</h1>
+    <p>숲, 우주, 종이 질감 등 다양한 스타일의 그림을 무료로 제공합니다.</p>
+  </div>
+
+  <!-- 영어 콘텐츠 -->
+  <div class="lang-block" id="lang-en">
+    <h1>Download AI-Generated Wallpapers</h1>
+    <p>We offer various styles like forest, space, and paper textures for free.</p>
+  </div>
+
+  <!-- 공통 갤러리 (한/영 동일하게 보여주면 여기 아래에 붙이면 됨) -->
   <div class="gallery">
     <div class="card">
-      <img src="images/forest.jpg" alt="숲 배경 이미지">
-      <a href="images/forest.jpg" download>다운로드</a>
+      <img src="images/forest.jpg" alt="Forest Image">
+      <a href="images/forest.jpg" download>Download</a>
     </div>
     <div class="card">
-      <img src="images/space.jpg" alt="우주 배경 이미지">
-      <a href="images/space.jpg" download>다운로드</a>
+      <img src="images/space.jpg" alt="Space Image">
+      <a href="images/space.jpg" download>Download</a>
     </div>
     <div class="card">
-      <img src="images/paper.jpg" alt="종이 질감 이미지">
-      <a href="images/paper.jpg" download>다운로드</a>
+      <img src="images/paper.jpg" alt="Paper Texture">
+      <a href="images/paper.jpg" download>Download</a>
     </div>
   </div>
+
+  <script>
+    const userLang = navigator.language || navigator.userLanguage;
+    const lang = userLang.startsWith('ko') ? 'ko' : 'en';
+    document.getElementById(`lang-${lang}`).classList.add('show');
+  </script>
+
 </body>
-</html>
