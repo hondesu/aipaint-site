@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 기본 루트 -->
+  <url>
+    <loc>https://aipaint.art/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 한국어 -->
+  <url>
+    <loc>https://aipaint.art/?lang=ko</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 영어 -->
+  <url>
+    <loc>https://aipaint.art/?lang=en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 일본어 -->
+  <url>
+    <loc>https://aipaint.art/?lang=ja</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
