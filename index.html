@@ -96,9 +96,10 @@
 
   <!-- 상단 버튼 영역 -->
   <div style="display: flex; justify-content: space-between; padding: 10px; align-items: center;">
-    <!-- 🌟 이미지 요청 버튼 -->
+    <!-- 버튼 2개: 이미지 요청 + 배경 생성 -->
     <div>
-      <a id="request-btn" href="request.html" style="padding: 6px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">🌟 이미지 요청</a>
+      <a id="request-btn" href="request.html" style="padding: 6px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-right: 6px;">🌟 이미지 요청</a>
+      <a id="wallpaper-btn" href="wallpaper.html" style="padding: 6px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">🎨 단색 배경</a>
     </div>
 
     <!-- 언어 선택 버튼 -->
@@ -174,9 +175,18 @@
     const supportedLangs = ['ko', 'en', 'ja'];
 
     const labels = {
-      ko: '🌟 이미지 요청',
-      en: '🌟 Request Image',
-      ja: '🌟 画像リクエスト'
+      ko: {
+        request: '🌟 이미지 요청',
+        wallpaper: '🎨 단색 배경'
+      },
+      en: {
+        request: '🌟 Request Image',
+        wallpaper: '🎨 Solid Wallpaper'
+      },
+      ja: {
+        request: '🌟 画像リクエスト',
+        wallpaper: '🎨 単色壁紙'
+      }
     };
 
     function showLang(lang) {
@@ -185,7 +195,8 @@
       });
       if (document.getElementById(`lang-${lang}`)) {
         document.getElementById(`lang-${lang}`).style.display = 'block';
-        document.getElementById('request-btn').innerText = labels[lang];
+        document.getElementById('request-btn').innerText = labels[lang].request;
+        document.getElementById('wallpaper-btn').innerText = labels[lang].wallpaper;
       }
     }
 
